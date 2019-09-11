@@ -1,7 +1,7 @@
 # CircleGraph
 
 ## Introduction
-In use of a circle graph in your project? This one's for you
+In use of a circle graph in your project? This one's for you.
 
 ## How to install CircleGraph
 Wip...
