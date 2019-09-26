@@ -11,20 +11,21 @@ import UIKit
 class ViewController: UIViewController {
 
 //    @IBOutlet weak var circleGraphContainer: CircleGraph!
+    @IBOutlet weak var circleGraphContainer: UIView!
     
     let singleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 80, height: 80), strokeWidth: 5, passiveColor: UIColor.gray, activeColor: UIColor.yellow, reservedColor: UIColor.red)
     let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.red, activeColor: UIColor.blue, reservedColor: UIColor.green)
     let threeArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 200, height: 200), strokeWidth: 30, passiveColor: UIColor.gray, activeColor: UIColor.blue, reservedColor: UIColor.green)
     
-//    var circleGraph: CircleGraph!
+    var circleGraph: CircleGraph!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-//        circleGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 8, passiveColor: UIColor.lightGray, activeColor: UIColor.orange, reservedColor: UIColor.white)
+        circleGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, reservedColor: UIColor.orange)
         
-//        circleGraphContainer.addSubview(circleGraph)
+        circleGraphContainer.addSubview(circleGraph)
         
 //        circleGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 8, passiveColor: UIColor.gray, activeColor: UIColor.orange)
         
@@ -59,7 +60,7 @@ class ViewController: UIViewController {
         singleArcGraph.drawTrackPath()
         doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 2.0)
         threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, toto: 0.25, animationDuration: 3.0)
-        
+        circleGraph.drawThreeLayerArc(from: 0.75, to: 0.5, toto: 0.4, animationDuration: 3.0)
         
     }
 
