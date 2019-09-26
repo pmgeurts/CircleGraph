@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E20CBBD22F323D800DC7A3B /* CircleGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E20CBBB22F323D800DC7A3B /* CircleGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E20CBC422F323FD00DC7A3B /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
+		6E46FC4A233CF91100CF176D /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
 		6ED83F0822F32716002505F7 /* CircleGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F0722F32716002505F7 /* CircleGraphTests.swift */; };
 		6ED83F0A22F32716002505F7 /* CircleGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20CBB822F323D800DC7A3B /* CircleGraph.framework */; };
 		6ED83F1722F328A3002505F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F1622F328A3002505F7 /* AppDelegate.swift */; };
@@ -281,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED83F1922F328A3002505F7 /* ViewController.swift in Sources */,
+				6E46FC4A233CF91100CF176D /* CircleGraph.swift in Sources */,
 				6ED83F1722F328A3002505F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
