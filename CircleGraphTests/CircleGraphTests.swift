@@ -22,12 +22,25 @@ class CircleGraphTests: XCTestCase {
         XCTAssertEqual(circleGraph.radius, 1.5, "Not equal")
     }
     
-    func testDrawTrackPath() {
-        
-    }
-    
-    func test() {
+    func testDoubleArcGraphForward() {
         circleGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 2.0)
     }
-
+    
+    func testDoubleArcGraphBackward() {
+        circleGraph.drawTwoLayerArc(from: 0.75, to: 0.5, animationDuration: 2.0)
+    }
+    
+    func testThreeArcGraphForward() {
+        circleGraph.drawThreeLayerArc(from: 0.25, to: 0.5, toto: 0.2, animationDuration: 1.0)
+    }
+    
+    func testThreeArcGraphBackward() {
+        circleGraph.drawThreeLayerArc(from: 0.5, to: 0.25, toto: 0.2, animationDuration: 1.0)
+    }
+    
+    func testInitWithCoder() {
+        let circleGraphView = CircleGraph(coder: NSCoder())
+        XCTAssertNil(circleGraphView)
+    }
+    
 }
