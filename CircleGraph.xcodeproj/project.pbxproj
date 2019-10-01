@@ -10,6 +10,7 @@
 		6E20CBBD22F323D800DC7A3B /* CircleGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E20CBBB22F323D800DC7A3B /* CircleGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E20CBC422F323FD00DC7A3B /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
 		6E46FC4A233CF91100CF176D /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
+		6E6B03DB2342948F009AEC9A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6E6B03DA2342948F009AEC9A /* README.md */; };
 		6ED83F0822F32716002505F7 /* CircleGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F0722F32716002505F7 /* CircleGraphTests.swift */; };
 		6ED83F0A22F32716002505F7 /* CircleGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20CBB822F323D800DC7A3B /* CircleGraph.framework */; };
 		6ED83F1722F328A3002505F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F1622F328A3002505F7 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		6E20CBBB22F323D800DC7A3B /* CircleGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleGraph.h; sourceTree = "<group>"; };
 		6E20CBBC22F323D800DC7A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraph.swift; sourceTree = "<group>"; };
+		6E6B03DA2342948F009AEC9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6ED83F0522F32716002505F7 /* CircleGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED83F0722F32716002505F7 /* CircleGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGraphTests.swift; sourceTree = "<group>"; };
 		6ED83F0922F32716002505F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				6ED83F0622F32716002505F7 /* CircleGraphTests */,
 				6ED83F1522F328A3002505F7 /* CircleGraphExample */,
 				6E20CBB922F323D800DC7A3B /* Products */,
+				6E6B03DA2342948F009AEC9A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6B03DB2342948F009AEC9A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
