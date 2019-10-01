@@ -10,64 +10,108 @@ import UIKit
 
 class ViewController: UIViewController {
 
-//    @IBOutlet weak var circleGraphContainer: CircleGraph!
-    @IBOutlet weak var circleGraphContainer: UIView!
+    //TO DO:
+    // Update readme with screenshots
     
-    let singleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 80, height: 80), strokeWidth: 5, passiveColor: UIColor.gray, activeColor: UIColor.yellow, reservedColor: UIColor.red)
-    let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.red, activeColor: UIColor.blue, reservedColor: UIColor.green)
-    let threeArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 200, height: 200), strokeWidth: 30, passiveColor: UIColor.gray, activeColor: UIColor.blue, reservedColor: UIColor.green)
     
-    var circleGraph: CircleGraph!
+    @IBOutlet weak var singleArcGraphContainer: UIView!
+    @IBOutlet weak var doubleArcGraphContainer: UIView!
+    @IBOutlet weak var tripleArcGraphContainer: UIView!
+    @IBOutlet weak var reloadButton: UIButton!
+    
+    //Examples on how to setup CircleGraphs programmatically
+//    let singleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 80, height: 80), strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.yellow, inBetweenColor: UIColor.red)
+//    let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
+    
+    var singleArcGraph: CircleGraph!
+    var doubleArcGraph: CircleGraph!
+    var tripleArcGraph: CircleGraph!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        reloadButton.addTarget(self, action: #selector(self.reloadView), for: .touchUpInside)
+        
+        singleArcGraph = CircleGraph(frame: singleArcGraphContainer.bounds, strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.yellow, inBetweenColor: UIColor.red)
+        doubleArcGraph = CircleGraph(frame: doubleArcGraphContainer.bounds, strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
+        tripleArcGraph = CircleGraph(frame: tripleArcGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
+        
+        singleArcGraphContainer.backgroundColor = UIColor.clear
+        doubleArcGraphContainer.backgroundColor = UIColor.clear
+        tripleArcGraphContainer.backgroundColor = UIColor.clear
+        
+        singleArcGraphContainer.addSubview(singleArcGraph)
+        doubleArcGraphContainer.addSubview(doubleArcGraph)
+        tripleArcGraphContainer.addSubview(tripleArcGraph)
+        
+        //Constraint functions
+//        setupConstraintSingArcGraph()
+//        setupConstraintsDoubleArc()
+        
+        //Draw functions
+        drawCircles()
+    }
+    
+//    private func setupConstraintSingArcGraph() {
+//
+//        self.view.addSubview(singleArcGraph)
+//        singleArcGraph.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            singleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            singleArcGraph.topAnchor.constraint(equalTo: self.drawCircleLabel.bottomAnchor, constant: 16),
+//            singleArcGraph.widthAnchor.constraint(equalToConstant: 80),
+//            singleArcGraph.heightAnchor.constraint(equalToConstant: 80)
+//            ])
+//    }
 
-        circleGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, reservedColor: UIColor.orange)
+//    private func setupConstraintsDoubleArc() {
+//
+//        self.view.addSubview(doubleArcGraph)
+//        doubleArcGraph.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            doubleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            doubleArcGraph.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200),
+//            doubleArcGraph.widthAnchor.constraint(equalToConstant: 120),
+//            doubleArcGraph.heightAnchor.constraint(equalToConstant: 120)
+//            ])
+//    }
+    
+    private func drawCircles() {
+        singleArcGraph.drawTrackPath()
+        doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
+        tripleArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+    }
+    
+    @objc private func reloadView() {
         
-        circleGraphContainer.addSubview(circleGraph)
+        if var singleArcSublayersCount = singleArcGraph.layer.sublayers?.count {
+            
+            while singleArcSublayersCount > 1 {
+                singleArcGraph.layer.sublayers?.removeLast()
+                singleArcSublayersCount -= 1
+            }
+        }
         
-//        circleGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 8, passiveColor: UIColor.gray, activeColor: UIColor.orange)
+        if var doubleArcSublayersCount = doubleArcGraph.layer.sublayers?.count {
+            
+            while doubleArcSublayersCount > 1 {
+                doubleArcGraph.layer.sublayers?.removeLast()
+                doubleArcSublayersCount -= 1
+            }
+        }
         
-        self.view.addSubview(singleArcGraph)
-        self.view.addSubview(doubleArcGraph)
-        self.view.addSubview(threeArcGraph)
-        singleArcGraph.translatesAutoresizingMaskIntoConstraints = false
-        doubleArcGraph.translatesAutoresizingMaskIntoConstraints = false
-        threeArcGraph.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            singleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            singleArcGraph.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 25),
-            singleArcGraph.widthAnchor.constraint(equalToConstant: 80),
-            singleArcGraph.heightAnchor.constraint(equalToConstant: 80)
-            ])
-        
-        NSLayoutConstraint.activate([
-            doubleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            doubleArcGraph.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            doubleArcGraph.widthAnchor.constraint(equalToConstant: 120),
-            doubleArcGraph.heightAnchor.constraint(equalToConstant: 120)
-            ])
-        
-        NSLayoutConstraint.activate([
-            threeArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            threeArcGraph.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            threeArcGraph.widthAnchor.constraint(equalToConstant: 200),
-            threeArcGraph.heightAnchor.constraint(equalToConstant: 200)
-            ])
+        if var tripleArcSublayersCount = tripleArcGraph.layer.sublayers?.count {
+            
+            while tripleArcSublayersCount > 1 {
+                tripleArcGraph.layer.sublayers?.removeLast()
+                tripleArcSublayersCount -= 1
+            }
+        }
         
         singleArcGraph.drawTrackPath()
-        doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 2.0)
-        threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, toto: 0.25, animationDuration: 3.0)
-        circleGraph.drawThreeLayerArc(from: 0.75, to: 0.5, toto: 0.4, animationDuration: 3.0)
-        
+        doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
+        tripleArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
     }
-
-
 }
-
-//@IBOutlet weak var graphContainer: UIView!
-//var graphView: CircleGraph!
-//    graphView = CircleGraph(frame: graphContainer.bounds, strokeWidth: 40, passiveColor: UIContext.darkGrayColor, activeColor: UIContext.abnGreenColor)
-//    graphContainer.addSubview(graphView)
