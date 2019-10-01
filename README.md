@@ -5,6 +5,8 @@ In use of a circle graph in your project? This one's for you.
 
 1. How to install CircleGraph
 2. How to use CircleGraph
+⋅⋅1. Ordered
+
 ..1. Programmatically
 ..2. Though the Interface builder
 3.
