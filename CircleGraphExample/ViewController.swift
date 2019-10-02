@@ -9,109 +9,111 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    struct  Color {
+        static let cityLights = UIColor(displayP3Red: 223/255, green: 230/255, blue: 233/255, alpha: 1)
+        static let fadedPoster: UIColor = UIColor(displayP3Red: 129/255, green: 236/255, blue: 236/255, alpha: 1)
+        static let eggBlue: UIColor = UIColor(displayP3Red: 0/255, green: 206/255, blue: 201/255, alpha: 1)
+        static let lightGreenishBlue: UIColor = UIColor(displayP3Red: 85/255, green: 239/255, blue: 196/255, alpha: 1)
+        static let pinkGlamour: UIColor = UIColor(displayP3Red: 255/255, green: 118/255, blue: 117/255, alpha: 1)
+    }
+    
     //TO DO:
     // Update readme with screenshots
-    
-    
+
     @IBOutlet weak var singleArcGraphContainer: UIView!
     @IBOutlet weak var doubleArcGraphContainer: UIView!
     @IBOutlet weak var tripleArcGraphContainer: UIView!
     @IBOutlet weak var reloadButton: UIButton!
     
-    //Examples on how to setup CircleGraphs programmatically
-//    let singleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 80, height: 80), strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.yellow, inBetweenColor: UIColor.red)
-//    let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
-    
-    var singleArcGraph: CircleGraph!
-    var doubleArcGraph: CircleGraph!
-    var tripleArcGraph: CircleGraph!
+    var trackPathGraph: CircleGraph!
+    var singleArcAnimatedGraph: CircleGraph!
+    var doubleArcAnimatedGraph: CircleGraph!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reloadButton.addTarget(self, action: #selector(self.reloadView), for: .touchUpInside)
-        
-        singleArcGraph = CircleGraph(frame: singleArcGraphContainer.bounds, strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.yellow, inBetweenColor: UIColor.red)
-        doubleArcGraph = CircleGraph(frame: doubleArcGraphContainer.bounds, strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
-        tripleArcGraph = CircleGraph(frame: tripleArcGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
-        
-        singleArcGraphContainer.backgroundColor = UIColor.clear
-        doubleArcGraphContainer.backgroundColor = UIColor.clear
-        tripleArcGraphContainer.backgroundColor = UIColor.clear
-        
-        singleArcGraphContainer.addSubview(singleArcGraph)
-        doubleArcGraphContainer.addSubview(doubleArcGraph)
-        tripleArcGraphContainer.addSubview(tripleArcGraph)
-        
-        //Constraint functions
-//        setupConstraintSingArcGraph()
-//        setupConstraintsDoubleArc()
-        
-        //Draw functions
-        drawCircles()
-    }
     
-//    private func setupConstraintSingArcGraph() {
-//
-//        self.view.addSubview(singleArcGraph)
-//        singleArcGraph.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            singleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            singleArcGraph.topAnchor.constraint(equalTo: self.drawCircleLabel.bottomAnchor, constant: 16),
-//            singleArcGraph.widthAnchor.constraint(equalToConstant: 80),
-//            singleArcGraph.heightAnchor.constraint(equalToConstant: 80)
-//            ])
-//    }
-
-//    private func setupConstraintsDoubleArc() {
-//
-//        self.view.addSubview(doubleArcGraph)
-//        doubleArcGraph.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            doubleArcGraph.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            doubleArcGraph.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200),
-//            doubleArcGraph.widthAnchor.constraint(equalToConstant: 120),
-//            doubleArcGraph.heightAnchor.constraint(equalToConstant: 120)
-//            ])
-//    }
-    
-    private func drawCircles() {
-        singleArcGraph.drawTrackPath()
-        doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
-        tripleArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+        setupButton()
+        setupGraphs()
+        drawGraphs()
     }
     
     @objc private func reloadView() {
         
-        if var singleArcSublayersCount = singleArcGraph.layer.sublayers?.count {
-            
-            while singleArcSublayersCount > 1 {
-                singleArcGraph.layer.sublayers?.removeLast()
-                singleArcSublayersCount -= 1
-            }
-        }
-        
-        if var doubleArcSublayersCount = doubleArcGraph.layer.sublayers?.count {
-            
-            while doubleArcSublayersCount > 1 {
-                doubleArcGraph.layer.sublayers?.removeLast()
-                doubleArcSublayersCount -= 1
-            }
-        }
-        
-        if var tripleArcSublayersCount = tripleArcGraph.layer.sublayers?.count {
-            
-            while tripleArcSublayersCount > 1 {
-                tripleArcGraph.layer.sublayers?.removeLast()
-                tripleArcSublayersCount -= 1
-            }
-        }
-        
-        singleArcGraph.drawTrackPath()
-        doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
-        tripleArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+        highlightBorder()
+        cleanupLayersForReload()
+        drawGraphs()
     }
+    
+    private func setupButton() {
+        reloadButton.layer.borderWidth = 1
+        reloadButton.layer.borderColor = self.view.tintColor.cgColor
+        reloadButton.layer.cornerRadius = 8.0
+        reloadButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        reloadButton.addTarget(self, action: #selector(unhighlightBorder), for: .touchDown)
+        reloadButton.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
+    }
+    
+    private func setupGraphs() {
+        trackPathGraph = CircleGraph(frame: singleArcGraphContainer.bounds, strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.lightGray, inBetweenColor: UIColor.lightGray)
+        singleArcAnimatedGraph = CircleGraph(frame: doubleArcGraphContainer.bounds, strokeWidth: 15, passiveColor: Color.eggBlue, activeColor: Color.lightGreenishBlue, inBetweenColor: UIColor.lightGray)
+        doubleArcAnimatedGraph = CircleGraph(frame: tripleArcGraphContainer.bounds, strokeWidth: 20, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
+        
+        clearBackgrounds()
+        addGraphSubviewsToContainers()
+    }
+    
+    private func drawGraphs() {
+        trackPathGraph.drawTrackPath()
+        singleArcAnimatedGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 1, animationType: .easeOut)
+        doubleArcAnimatedGraph.drawThreeLayerArc(from: 0.8, to: 0.6, inBetween: 0.4, animationDuration: 2, animationType: .easeInEaseOut)
+    }
+    
+    private func highlightBorder() {
+        reloadButton.layer.borderColor = self.view.tintColor.cgColor
+    }
+    
+    @objc private func unhighlightBorder() {
+        reloadButton.layer.borderColor = UIColor(displayP3Red: 210/255, green: 228/255, blue: 253/255, alpha: 1).cgColor
+    }
+    
+    private func cleanupLayersForReload() {
+        
+        if var trackPathSublayersCount = trackPathGraph.layer.sublayers?.count {
+            
+            while trackPathSublayersCount > 1 {
+                trackPathGraph.layer.sublayers?.removeLast()
+                trackPathSublayersCount -= 1
+            }
+        }
+        
+        if var singleArcAnimatedSublayersCount = singleArcAnimatedGraph.layer.sublayers?.count {
+            
+            while singleArcAnimatedSublayersCount > 1 {
+                singleArcAnimatedGraph.layer.sublayers?.removeLast()
+                singleArcAnimatedSublayersCount -= 1
+            }
+        }
+        
+        if var doubleArcAnimatedSublayersCount = doubleArcAnimatedGraph.layer.sublayers?.count {
+            
+            while doubleArcAnimatedSublayersCount > 1 {
+                doubleArcAnimatedGraph.layer.sublayers?.removeLast()
+                doubleArcAnimatedSublayersCount -= 1
+            }
+        }
+    }
+    
+    private func clearBackgrounds() {
+        singleArcGraphContainer.backgroundColor = UIColor.clear
+        doubleArcGraphContainer.backgroundColor = UIColor.clear
+        tripleArcGraphContainer.backgroundColor = UIColor.clear
+    }
+    
+    private func addGraphSubviewsToContainers () {
+        singleArcGraphContainer.addSubview(trackPathGraph)
+        doubleArcGraphContainer.addSubview(singleArcAnimatedGraph)
+        tripleArcGraphContainer.addSubview(doubleArcAnimatedGraph)
+    }
+    
 }
