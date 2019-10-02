@@ -4,14 +4,11 @@
 In use of a circle graph in your project? This one's for you.
 
 1. How to install CircleGraph
-2. How to use CircleGraph
-⋅⋅1. Ordered
-
-..1. Programmatically
-..2. Though the Interface builder
-3.
-4.
-5.
+2. How to implement CircleGraph
+- Programmatically
+- Though the Interface builder
+3. How to customize CircleGraph
+4. Any questions?
 
 
 ![Farmers Market Finder Demo](demo/demo.gif)
@@ -29,11 +26,13 @@ Wip...
 - Set anchors:  NSLayoutConstraint.activate([ ... ])
 - Call method: doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
 
-###nInterface builder:
+### Interface builder:
 - var threeArcGraph: CircleGraph!
 - threeArcGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
 - circleGraphContainer.addSubview(threeArcGraph)
 - threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+
+## How to customize CircleGraph
 
 ### Colors
 Passive color: Background circle
