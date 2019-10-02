@@ -11,6 +11,8 @@
 		6E20CBC422F323FD00DC7A3B /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
 		6E46FC4A233CF91100CF176D /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */; };
 		6E6B03DB2342948F009AEC9A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6E6B03DA2342948F009AEC9A /* README.md */; };
+		6E6B03E42344A1D6009AEC9A /* AnimationExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B03E32344A1D6009AEC9A /* AnimationExamplesViewController.swift */; };
+		6E6B03EA2344EE34009AEC9A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B03E92344EE34009AEC9A /* Colors.swift */; };
 		6ED83F0822F32716002505F7 /* CircleGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F0722F32716002505F7 /* CircleGraphTests.swift */; };
 		6ED83F0A22F32716002505F7 /* CircleGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20CBB822F323D800DC7A3B /* CircleGraph.framework */; };
 		6ED83F1722F328A3002505F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED83F1622F328A3002505F7 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		6E20CBBC22F323D800DC7A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E20CBC322F323FD00DC7A3B /* CircleGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraph.swift; sourceTree = "<group>"; };
 		6E6B03DA2342948F009AEC9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6E6B03E32344A1D6009AEC9A /* AnimationExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExamplesViewController.swift; sourceTree = "<group>"; };
+		6E6B03E92344EE34009AEC9A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6ED83F0522F32716002505F7 /* CircleGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED83F0722F32716002505F7 /* CircleGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGraphTests.swift; sourceTree = "<group>"; };
 		6ED83F0922F32716002505F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				6ED83F1622F328A3002505F7 /* AppDelegate.swift */,
+				6E6B03E32344A1D6009AEC9A /* AnimationExamplesViewController.swift */,
 				6ED83F1822F328A3002505F7 /* ViewController.swift */,
+				6E6B03E92344EE34009AEC9A /* Colors.swift */,
 				6ED83F1A22F328A3002505F7 /* Main.storyboard */,
 				6ED83F1D22F328A5002505F7 /* Assets.xcassets */,
 				6ED83F1F22F328A5002505F7 /* LaunchScreen.storyboard */,
@@ -286,7 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED83F1922F328A3002505F7 /* ViewController.swift in Sources */,
+				6E6B03EA2344EE34009AEC9A /* Colors.swift in Sources */,
 				6E46FC4A233CF91100CF176D /* CircleGraph.swift in Sources */,
+				6E6B03E42344A1D6009AEC9A /* AnimationExamplesViewController.swift in Sources */,
 				6ED83F1722F328A3002505F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
