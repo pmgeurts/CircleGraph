@@ -1,8 +1,8 @@
 # CircleGraph
 
-## Introduction
-In use of a circle graph in your project? This one's for you.
+## Table of Contents
 
+[I'm an inline-style link](#anchors-in-markdown)
 1. How to install CircleGraph
 2. How to implement CircleGraph
 - Programmatically
@@ -10,9 +10,17 @@ In use of a circle graph in your project? This one's for you.
 3. How to customize CircleGraph
 4. Any questions?
 
-<img width="366" alt="circleGraphExplained" src="https://user-images.githubusercontent.com/28221314/66121933-ada0ae80-e5de-11e9-9851-f26bc8c62ad8.png">
+## Introduction
 
 ![circleGraphsAnimated](https://user-images.githubusercontent.com/28221314/66121934-ada0ae80-e5de-11e9-9440-7a6454e0b215.gif)
+
+If you are looking for a customizable circle graph to add to your project, you have come to the right place. This CircleGraph pods offers easy implementation with customizable parameters such as line width, size, color, multiple arcs and different animations (see some examples above). 
+
+
+
+<img width="366" alt="circleGraphExplained" src="https://user-images.githubusercontent.com/28221314/66121933-ada0ae80-e5de-11e9-9851-f26bc8c62ad8.png">
+
+
 
 
 ## How to install CircleGraph
@@ -35,7 +43,7 @@ Wip...
 - threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
 
 ## How to customize CircleGraph
-
+[create an anchor](#anchors-in-markdown)
 ### Colors
 Passive color: Background circle
 Active color: First animated circle
