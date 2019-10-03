@@ -11,7 +11,7 @@ In use of a circle graph in your project? This one's for you.
 4. Any questions?
 
 
-![Circle graph examples animated](images/circleGraphsAnimated.gif)
+![Circle graph examples animated](Images/circleGraphsAnimated.gif)
 
 ## How to install CircleGraph
 Wip...
