@@ -12,6 +12,7 @@ In use of a circle graph in your project? This one's for you.
 
 
 ![Circle graph examples animated](https://github.com/pmgeurts/CircleGraph/tree/master/Images/circleGraphsAnimated.gif)
+![Circle graph explained](https://github.com/pmgeurts/CircleGraph/tree/master/Images/circleGraphExplained.png)
 
 ## How to install CircleGraph
 Wip...
