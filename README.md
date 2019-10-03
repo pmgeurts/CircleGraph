@@ -43,7 +43,8 @@ Wip...
 - threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
 
 ## How to customize CircleGraph
-[create an anchor](#anchors-in-markdown)
+
+<a name="anchors-in-markdown"></a>
 ### Colors
 Passive color: Background circle
 Active color: First animated circle
