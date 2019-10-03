@@ -10,9 +10,10 @@ In use of a circle graph in your project? This one's for you.
 3. How to customize CircleGraph
 4. Any questions?
 
+<img width="366" alt="circleGraphExplained" src="https://user-images.githubusercontent.com/28221314/66121933-ada0ae80-e5de-11e9-9851-f26bc8c62ad8.png">
 
-![Circle graph examples animated](https://github.com/pmgeurts/CircleGraph/tree/master/Images/circleGraphsAnimated.gif)
-![Circle graph explained](https://github.com/pmgeurts/CircleGraph/tree/master/Images/circleGraphExplained.png)
+![circleGraphsAnimated](https://user-images.githubusercontent.com/28221314/66121934-ada0ae80-e5de-11e9-9440-7a6454e0b215.gif)
+
 
 ## How to install CircleGraph
 Wip...
