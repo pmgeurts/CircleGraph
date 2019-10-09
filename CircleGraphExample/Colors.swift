@@ -15,4 +15,5 @@ struct Color {
     static let eggBlue: UIColor = UIColor(displayP3Red: 0/255, green: 206/255, blue: 201/255, alpha: 1)
     static let lightGreenishBlue: UIColor = UIColor(displayP3Red: 85/255, green: 239/255, blue: 196/255, alpha: 1)
     static let pinkGlamour: UIColor = UIColor(displayP3Red: 255/255, green: 118/255, blue: 117/255, alpha: 1)
+    static let appleBlue: UIColor = UIColor(displayP3Red: 210/255, green: 228/255, blue: 253/255, alpha: 1)
 }
