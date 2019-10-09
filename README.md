@@ -1,5 +1,7 @@
 # CircleGraph
 
+![circleGraphsAnimated](https://user-images.githubusercontent.com/28221314/66121934-ada0ae80-e5de-11e9-9440-7a6454e0b215.gif)
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -19,8 +21,6 @@
 4. Any questions?
 
 ## Introduction
-
-![circleGraphsAnimated](https://user-images.githubusercontent.com/28221314/66121934-ada0ae80-e5de-11e9-9440-7a6454e0b215.gif)
 
 If you are looking for a customizable circle graph to add to your project, you have come to the right place. This CircleGraph pods offers easy implementation with customizable parameters such as line width, size, color, multiple arcs and different animations (see some examples above). 
 
