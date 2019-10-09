@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func unhighlightBorder() {
-        reloadButton.layer.borderColor = UIColor(displayP3Red: 210/255, green: 228/255, blue: 253/255, alpha: 1).cgColor
+        reloadButton.layer.borderColor = Color.appleBlue.cgColor
     }
     
     private func cleanupLayersForReload() {

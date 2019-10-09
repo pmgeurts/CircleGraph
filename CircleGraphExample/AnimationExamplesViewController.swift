@@ -11,102 +11,123 @@ import UIKit
 
 class AnimationExamplesViewController: UIViewController {
     
-    //TO DO:
-    // Update readme with screenshots
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
     
-//    @IBOutlet weak var singleArcGraphContainer: UIView!
-//    @IBOutlet weak var doubleArcGraphContainer: UIView!
-//    @IBOutlet weak var tripleArcGraphContainer: UIView!
-//    @IBOutlet weak var reloadButton: UIButton!
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
-//    var trackPathGraph: CircleGraph!
-//    var singleArcAnimatedGraph: CircleGraph!
-//    var doubleArcAnimatedGraph: CircleGraph!
+    
+    @IBOutlet weak var linearAnimatedGraphContainer: UIView!
+    @IBOutlet weak var easeInEaseOutAnimatedGraphContainer: UIView!
+    @IBOutlet weak var easeInAnimatedGraphContainer: UIView!
+    @IBOutlet weak var easeOutAnimatedGraphContainer: UIView!
+    @IBOutlet weak var reloadButton: UIButton!
+    
+    var linearAnimatedGraph: CircleGraph!
+    var easeInEaseOutAnimatedGraph: CircleGraph!
+    var easeInAnimatedGraph: CircleGraph!
+    var easeOutAnimatedGraph: CircleGraph!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupButton()
-//        setupGraphs()
-//        drawGraphs()
+        setupButton()
+        setupGraphs()
+        drawGraphs()
     }
     
-//    @objc private func reloadView() {
-//
-//        highlightBorder()
-//        cleanupLayersForReload()
-//        drawGraphs()
-//    }
-//
-//    private func setupButton() {
-//        reloadButton.layer.borderWidth = 1
-//        reloadButton.layer.borderColor = self.view.tintColor.cgColor
-//        reloadButton.layer.cornerRadius = 8.0
-//        reloadButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-//        reloadButton.addTarget(self, action: #selector(unhighlightBorder), for: .touchDown)
-//        reloadButton.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
-//    }
+    @objc private func reloadView() {
+
+        highlightBorder()
+        cleanupLayersForReload()
+        drawGraphs()
+    }
+
+    private func setupButton() {
+        reloadButton.layer.borderWidth = 1
+        reloadButton.layer.borderColor = self.view.tintColor.cgColor
+        reloadButton.layer.cornerRadius = 8.0
+        reloadButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        reloadButton.addTarget(self, action: #selector(unhighlightBorder), for: .touchDown)
+        reloadButton.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
+    }
     
-//    private func setupGraphs() {
-//        trackPathGraph = CircleGraph(frame: singleArcGraphContainer.bounds, strokeWidth: 5, passiveColor: UIColor.lightGray, activeColor: UIColor.lightGray, inBetweenColor: UIColor.lightGray)
-//        singleArcAnimatedGraph = CircleGraph(frame: doubleArcGraphContainer.bounds, strokeWidth: 15, passiveColor: Color.eggBlue, activeColor: Color.lightGreenishBlue, inBetweenColor: UIColor.lightGray)
-//        doubleArcAnimatedGraph = CircleGraph(frame: tripleArcGraphContainer.bounds, strokeWidth: 20, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
-//        
-//        clearBackgrounds()
-//        addGraphSubviewsToContainers()
-//    }
-//    
-//    private func drawGraphs() {
-//        trackPathGraph.drawTrackPath()
-//        singleArcAnimatedGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.75, animationType: .easeOut)
-//        doubleArcAnimatedGraph.drawThreeLayerArc(from: 0.8, to: 0.6, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
-//    }
-//    
-//    private func highlightBorder() {
-//        reloadButton.layer.borderColor = self.view.tintColor.cgColor
-//    }
-//    
-//    @objc private func unhighlightBorder() {
-//        reloadButton.layer.borderColor = UIColor(displayP3Red: 210/255, green: 228/255, blue: 253/255, alpha: 1).cgColor
-//    }
-//    
-//    private func cleanupLayersForReload() {
-//        
-//        if var trackPathSublayersCount = trackPathGraph.layer.sublayers?.count {
-//            
-//            while trackPathSublayersCount > 1 {
-//                trackPathGraph.layer.sublayers?.removeLast()
-//                trackPathSublayersCount -= 1
-//            }
-//        }
-//        
-//        if var singleArcAnimatedSublayersCount = singleArcAnimatedGraph.layer.sublayers?.count {
-//            
-//            while singleArcAnimatedSublayersCount > 1 {
-//                singleArcAnimatedGraph.layer.sublayers?.removeLast()
-//                singleArcAnimatedSublayersCount -= 1
-//            }
-//        }
-//        
-//        if var doubleArcAnimatedSublayersCount = doubleArcAnimatedGraph.layer.sublayers?.count {
-//            
-//            while doubleArcAnimatedSublayersCount > 1 {
-//                doubleArcAnimatedGraph.layer.sublayers?.removeLast()
-//                doubleArcAnimatedSublayersCount -= 1
-//            }
-//        }
-//    }
-//    
-//    private func clearBackgrounds() {
-//        singleArcGraphContainer.backgroundColor = UIColor.clear
-//        doubleArcGraphContainer.backgroundColor = UIColor.clear
-//        tripleArcGraphContainer.backgroundColor = UIColor.clear
-//    }
-//    
-//    private func addGraphSubviewsToContainers () {
-//        singleArcGraphContainer.addSubview(trackPathGraph)
-//        doubleArcGraphContainer.addSubview(singleArcAnimatedGraph)
-//        tripleArcGraphContainer.addSubview(doubleArcAnimatedGraph)
-//    }
+    private func setupGraphs() {
+        linearAnimatedGraph = CircleGraph(frame: linearAnimatedGraphContainer.bounds, strokeWidth: 4, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
+        easeInEaseOutAnimatedGraph = CircleGraph(frame: easeInEaseOutAnimatedGraphContainer.bounds, strokeWidth: 4, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
+        easeInAnimatedGraph = CircleGraph(frame: easeInAnimatedGraphContainer.bounds, strokeWidth: 4, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
+        easeOutAnimatedGraph = CircleGraph(frame: easeOutAnimatedGraphContainer.bounds, strokeWidth: 4, passiveColor: Color.cityLights, activeColor: Color.pinkGlamour, inBetweenColor: Color.fadedPoster)
+
+        clearBackgrounds()
+        addGraphSubviewsToContainers()
+    }
+    
+    private func drawGraphs() {
+        linearAnimatedGraph.drawThreeLayerArc(from: 0, to: 0.75, inBetween: 0.5, animationDuration: 1, animationType: .linear)
+        easeInEaseOutAnimatedGraph.drawThreeLayerArc(from: 0, to: 0.75, inBetween: 0.5, animationDuration: 1, animationType: .easeInEaseOut)
+        easeInAnimatedGraph.drawThreeLayerArc(from: 0, to: 0.75, inBetween: 0.5, animationDuration: 1, animationType: .easeIn)
+        easeOutAnimatedGraph.drawThreeLayerArc(from: 0, to: 0.75, inBetween: 0.5, animationDuration: 1, animationType: .easeOut)
+    }
+    
+    private func highlightBorder() {
+        reloadButton.layer.borderColor = self.view.tintColor.cgColor
+    }
+
+    @objc private func unhighlightBorder() {
+        reloadButton.layer.borderColor = Color.appleBlue.cgColor
+    }
+    
+    private func cleanupLayersForReload() {
+        
+        if var linearPathSublayersCount = linearAnimatedGraph.layer.sublayers?.count {
+            
+            while linearPathSublayersCount > 1 {
+                linearAnimatedGraph.layer.sublayers?.removeLast()
+                linearPathSublayersCount -= 1
+            }
+        }
+        
+        if var easeInEaseOutAnimatedSublayersCount = easeInEaseOutAnimatedGraph.layer.sublayers?.count {
+            
+            while easeInEaseOutAnimatedSublayersCount > 1 {
+                easeInEaseOutAnimatedGraph.layer.sublayers?.removeLast()
+                easeInEaseOutAnimatedSublayersCount -= 1
+            }
+        }
+        
+        if var easeInAnimatedSublayersCount = easeInAnimatedGraph.layer.sublayers?.count {
+            
+            while easeInAnimatedSublayersCount > 1 {
+                easeInAnimatedGraph.layer.sublayers?.removeLast()
+                easeInAnimatedSublayersCount -= 1
+            }
+        }
+        
+        if var easeOutAnimatedSublayersCount = easeOutAnimatedGraph.layer.sublayers?.count {
+            
+            while easeOutAnimatedSublayersCount > 1 {
+                easeOutAnimatedGraph.layer.sublayers?.removeLast()
+                easeOutAnimatedSublayersCount -= 1
+            }
+        }
+    }
+    
+    private func clearBackgrounds() {
+        linearAnimatedGraphContainer.backgroundColor = UIColor.clear
+        easeInEaseOutAnimatedGraphContainer.backgroundColor = UIColor.clear
+        easeInAnimatedGraphContainer.backgroundColor = UIColor.clear
+        easeOutAnimatedGraphContainer.backgroundColor = UIColor.clear
+    }
+  
+    private func addGraphSubviewsToContainers () {
+        linearAnimatedGraphContainer.addSubview(linearAnimatedGraph)
+        easeInEaseOutAnimatedGraphContainer.addSubview(easeInEaseOutAnimatedGraph)
+        easeInAnimatedGraphContainer.addSubview(easeInAnimatedGraph)
+        easeOutAnimatedGraphContainer.addSubview(easeOutAnimatedGraph)
+    }
     
 }
