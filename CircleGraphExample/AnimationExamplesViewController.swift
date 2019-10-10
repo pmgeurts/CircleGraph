@@ -22,9 +22,9 @@ class AnimationExamplesViewController: UIViewController {
     
     
     @IBOutlet weak var linearAnimatedGraphContainer: UIView!
-    @IBOutlet weak var easeInEaseOutAnimatedGraphContainer: UIView!
     @IBOutlet weak var easeInAnimatedGraphContainer: UIView!
     @IBOutlet weak var easeOutAnimatedGraphContainer: UIView!
+    @IBOutlet weak var easeInEaseOutAnimatedGraphContainer: UIView!
     @IBOutlet weak var reloadButton: UIButton!
     
     var linearAnimatedGraph: CircleGraph!
