@@ -32,7 +32,29 @@ If you are looking for a customizable circle graph to add to your project, you h
 
 <a name="how-to-install-circle-graph"></a>
 ## How to install CircleGraph
-Wip...
+
+# CocoaPods
+
+If you didn't use CocoaPods before, install it first.
+
+$ gem install cocoapods
+$ pod setup
+Create a file named Podfile in your project folder if this file doesn't exist. And append the following line into your Podfile.
+
+```terminal
+pod 'CircleGraph', :git => 'https://github.com/pmgeurts/CircleGraph.git'
+```
+Then, run this command. 🎉
+
+```
+$ pod install
+Manual
+```
+
+Drag this file into your project.
+
+CircleGrapph/CircleGraph.swift
+And you can use CircleGraph. 🎉
 
 <a name="how-to-use-circle-graph"></a>
 ## How to use CircleGraph
