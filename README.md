@@ -7,18 +7,13 @@
 1. [Introduction](#introduction)
 2. [How to install CircleGraph](#how-to-install-circle-graph)
 3. [How to use CircleGraph](#how-to-implement-circle-graph)
-- [Programmatically](#how-to-use-circle-graph-programmatically)
+    3.1 [Programmatically](#how-to-use-circle-graph-programmatically)
 - [Interface builder](#how-to-use-circle-graph-interface-builder)
 4. [How to customize CircleGraph](#how-to-customize-circle-graph)
 - [Colors](#how-to-customize-circle-graph-colors)
 - [Direction](#how-to-customize-circle-graph-direction)
 - [Animation](#how-to-customize-circle-graph-animation)
 5. [Any questions](#any-questions)
-
-- Programmatically
-- Though the Interface builder
-3. How to customize CircleGraph
-4. Any questions?
 
 ## Introduction
 
