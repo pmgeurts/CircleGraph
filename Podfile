@@ -1,10 +1,20 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '12.0'
 
-target 'CircleGraph' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+Pod::Spec.new do |s|
 
-  # Pods for CircleGraph
+  s.name         = "CircleGraph"
+  s.version      = "0.0.1"
+  s.summary      = "A compact class to generate customizable circle graphs."
+
+  s.description  = <<-DESC
+                   A compact class to generate customizable circle graphs.
+                   DESC
+
+  s.homepage     = "https://github.com/pmgeurts/CircleGraph"
+  s.license      = "MIT"
+  s.author       = { "Paul Geurts" => "pmgeurts@gmail.com" }
+  s.source       = { :git => "https://github.com/pmgeurts/CircleGraph.git", :tag => "v0.0.1" }
+  s.platforms = { :ios => "12.2" }
+
+  s.source_files  = "Sources/**/*.swift"
 
 end
