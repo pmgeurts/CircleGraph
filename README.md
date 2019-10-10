@@ -62,34 +62,46 @@ Wip...
 
 <a name="how-to-use-circle-graph-programmatically"></a>
 ### Programmatically:
+Use this method if you purely want to use code to instantiate your Circle Graph:
 
 ```Swift
 
 //Instantiate graph:
-let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor:
+let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
 
 //Add Subview:
-let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor:
+let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
 
 //Set anchors:
 NSLayoutConstraint.activate([ ... ])
 
 //Call the graph method:
 doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
-
-- Instantiate graph: let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
-- Add subview: self.view.addSubview(doubleArcGraph)
-- Set translatesAutoresizingMaskIntoConstraints to false: doubleArcGraph.translatesAutoresizingMaskIntoConstraints = false
-- Set anchors:  NSLayoutConstraint.activate([ ... ])
-- Call method: doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
 ```
 
 <a name="how-to-use-circle-graph-interface-builder"></a>
 ### Interface builder:
+Use this method if you define your Circle Graph container view in your XIB / Storyboard:
+
+```Swift
+
+//Setup your container view in your view file
+
+//Create an outlet:
+@IBOutlet weak var: circleGRaphContainr: UIView!
+
+//Create graph object:
 - var threeArcGraph: CircleGraph!
-- threeArcGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
+
+//Setup circle graph (the frame is taken from the container bounds):
+threeArcGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
+
+//Add Subview:
 - circleGraphContainer.addSubview(threeArcGraph)
+
+//Call the graph method:
 - threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+```
 
 <a name="how-to-customize-circle-graph"></a>
 ## How to customize CircleGraph
