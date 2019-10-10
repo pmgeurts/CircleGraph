@@ -62,11 +62,27 @@ Wip...
 
 <a name="how-to-use-circle-graph-programmatically"></a>
 ### Programmatically:
+
+```Swift
+
+//Instantiate graph:
+let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor:
+
+//Add Subview:
+let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor:
+
+//Set anchors:
+NSLayoutConstraint.activate([ ... ])
+
+//Call the graph method:
+doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
+
 - Instantiate graph: let doubleArcGraph = CircleGraph(frame: CGRect(x: 0, y: 0, width: 120, height: 120), strokeWidth: 15, passiveColor: UIColor.purple, activeColor: UIColor.magenta, inBetweenColor: UIColor.red)
 - Add subview: self.view.addSubview(doubleArcGraph)
 - Set translatesAutoresizingMaskIntoConstraints to false: doubleArcGraph.translatesAutoresizingMaskIntoConstraints = false
 - Set anchors:  NSLayoutConstraint.activate([ ... ])
 - Call method: doubleArcGraph.drawTwoLayerArc(from: 0, to: 0.5, animationDuration: 0.5, animationType: .linear)
+```
 
 <a name="how-to-use-circle-graph-interface-builder"></a>
 ### Interface builder:
