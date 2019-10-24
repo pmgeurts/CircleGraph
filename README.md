@@ -28,12 +28,15 @@ If you are looking for a customizable circle graph to add to your project, you h
 <a name="how-to-install-circle-graph"></a>
 ## How to install CircleGraph
 
-# CocoaPods
+### Through CocoaPods
 
 If you didn't use CocoaPods before, install it first.
 
+```terminal
 $ gem install cocoapods
 $ pod setup
+```
+
 Create a file named Podfile in your project folder if this file doesn't exist. And append the following line into your Podfile.
 
 ```terminal
@@ -43,8 +46,8 @@ Then, run this command. 🎉
 
 ```
 $ pod install
-Manual
 ```
+### Manually
 
 Drag this file into your project.
 
@@ -53,7 +56,6 @@ And you can use CircleGraph. 🎉
 
 <a name="how-to-use-circle-graph"></a>
 ## How to use CircleGraph
-Wip...
 
 <a name="how-to-use-circle-graph-programmatically"></a>
 ### Programmatically:
@@ -119,4 +121,4 @@ Duration of the animation can be specified in the drawing function
 
 <a name="any-questions"></a>
 ## Any questions?
-Feel free to reach out!
+Feel free to reach out! <pmgeurts@gmail.com>
