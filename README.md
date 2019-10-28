@@ -93,16 +93,16 @@ Use this method if you define your Circle Graph container view in your XIB / Sto
 @IBOutlet weak var: circleGRaphContainr: UIView!
 
 //Create graph object:
-- var threeArcGraph: CircleGraph!
+var threeArcGraph: CircleGraph!
 
 //Setup circle graph (the frame is taken from the container bounds):
 threeArcGraph = CircleGraph(frame: circleGraphContainer.bounds, strokeWidth: 20, passiveColor: UIColor.lightGray, activeColor: UIColor.red, inBetweenColor: UIColor.orange)
 
 //Add Subview:
-- circleGraphContainer.addSubview(threeArcGraph)
+circleGraphContainer.addSubview(threeArcGraph)
 
 //Call the graph method:
-- threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
+threeArcGraph.drawThreeLayerArc(from: 0.75, to: 0.5, inBetween: 0.4, animationDuration: 1.5, animationType: .easeInEaseOut)
 ```
 
 <a name="how-to-customize-circle-graph"></a>
