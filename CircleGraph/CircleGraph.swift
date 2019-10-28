@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CircleGraph: UIView {
+public class CircleGraph: UIView {
     
     let strokeWidth: CGFloat
     let radius: CGFloat
