@@ -37,7 +37,12 @@ $ gem install cocoapods
 $ pod setup
 ```
 
-Create a file named Podfile in your project folder if this file doesn't exist. And append the following line into your Podfile.
+If you don't have a Podfile yet, navigate to your project file and run:
+
+```terminal
+pod init
+```
+If the Podfile is there, simply append the following line to your Podfile.
 
 ```terminal
 pod 'CircleGraph', :git => 'https://github.com/pmgeurts/CircleGraph.git'
